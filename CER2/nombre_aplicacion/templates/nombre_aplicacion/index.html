@@ -22,11 +22,8 @@
                     <hr>
                 </div>
                 <div class="col-3 logoEntidad d-none d-xxl-block">
-                  {% if comunicado.entidad.logo %}
-                  <img src="{{comunicado.entidad.logo.url}}" class="img-fluid" style="max-height: 100px;" alt="">
-                {% else %}
-                  <img src="{% static 'comunicados/img/Logo_UTFSM.png' %}" class="img-fluid" style="max-height: 100px;" alt="">
-                {% endif %}
+                  <img src="{{comunicado.entidad.logos.url}}" class="img-fluid" style="max-height: 100px;" alt="">
+                
                 </div>
             </div>
         </div>
