@@ -2,7 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .models import Comunicado, Entidad
 
-def index(request):
+def eleguir(request):
     titulo="Inicio"
 
     if request.GET.get("entidad") =='todos' or request.GET.get("entidad") is None:

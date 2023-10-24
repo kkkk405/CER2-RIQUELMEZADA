@@ -54,18 +54,23 @@
     <!--cuadrados INICIO ADMINISTRACION-->
 
     <!--departamento-->
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col cuadrado_entidad">
-          <select class="form-select d-xxl-none cuadrado" aria-label="Default select example">
-            <option selected> Seleccione</option>
-            {% for entidad in entidades %}
-            <option value="{{entidad.id}}">{{entidad.nombre}}</option>
-            {% endfor %}
-          </select>
+
+
+    <form method="GET" action="{% url 'eleguir' %}">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col cuadrado_entidad">
+            <select class="form-select d-xxl-none cuadrado" aria-label="Default select example">
+              <option selected> Seleccione</option>
+              {% for entidad in entidades %}
+                <option  value={{entidadd.nombre}} {% if entidad_eleguida == entidadd.nombre %} selected {% endif %} >
+                {{entidad.nombre}}</option>
+              {% endfor %}
+            </select>
+          </div>
         </div>
       </div>
-    </div>
+    </form>
 
       <!--departamente-->
 
@@ -102,7 +107,7 @@
   <!--carrusel-->
 
 
-
+  <form method="GET" action="{% url 'eleguir' %}">
   <div class="row d-xxl-none cuadrado">
     {% for comunicado in comunicados %}
     {% if comunicado.visible == True %}
@@ -121,6 +126,7 @@
     {% endif %}
     {% endfor %}
   </div>
+</form>
 </div>
     <!--cuadrados COMUNICADO-->
 

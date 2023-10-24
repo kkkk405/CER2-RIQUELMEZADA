@@ -19,6 +19,7 @@ from django.urls import path
 from nombre_aplicacion import views
 
 urlpatterns = [
-    path('', views.index, name='home'),
+    path('', views.eleguir, name='eleguir'),
     path('admin/', admin.site.urls),
+    path('filtro/<str:entidad_eleguida>/', views.eleguir, name='entidad_eleguida')
 ]
